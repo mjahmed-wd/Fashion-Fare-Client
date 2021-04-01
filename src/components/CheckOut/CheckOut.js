@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { UserContext } from "../../App";
 
 const CheckOut = () => {
+  const [user] = useContext(UserContext);
   const [product, setProduct] = useState();
   const id = sessionStorage.getItem("product");
   console.log(id);
@@ -12,11 +14,12 @@ const CheckOut = () => {
       });
   }, [id]);
   const placeOrder = () => {
-      const orderData={
-          productName: product.name,
-          productPrice: product.price,
-          orderPlacingTime: new Date()
-      }
+    const orderData = {
+      userEmail: user.email,
+      productName: product.name,
+      productPrice: product.price,
+      orderPlacingTime: new Date(),
+    };
     fetch("http://localhost:5000/addOrder", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -35,14 +38,16 @@ const CheckOut = () => {
         <h4>Quantity</h4>
         <h4>Price</h4>
       </div>
-      {product &&product.name && (
+      {product && product.name && (
         <div className="d-flex justify-content-around">
           <h4>{product.name}</h4>
           <h4>{product.price} </h4>
           <h4>50</h4>
         </div>
       )}
-      {product && product.name && <button onClick={placeOrder}>Place Order</button>}
+      {product && product.name && (
+        <button onClick={placeOrder}>Place Order</button>
+      )}
     </div>
   );
 };
