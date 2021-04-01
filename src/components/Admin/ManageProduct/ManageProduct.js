@@ -32,7 +32,7 @@ const ManageProduct = () => {
               </thead>
               <tbody>
                 {products.map((product) => (
-                  <ManageSingleProduct key={product._id} product={product} />
+                  <ManageSingleProduct key={product._id} index={products.indexOf(product)} product={product} />
                 ))}
               </tbody>
             </Table>

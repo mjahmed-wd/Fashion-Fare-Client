@@ -27,7 +27,8 @@ const CheckOut = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
+        alert("Order Placed Successfully")
       });
   };
   return (

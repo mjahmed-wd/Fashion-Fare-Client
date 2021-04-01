@@ -17,7 +17,7 @@ const Order = () => {
   }, [user.email]);
   return (
     <div>
-      <h3 className="text-center mb-4 mt-4">You have {orders.length} order running.</h3>
+      <h3 className="text-center mb-4 mt-4">You have {orders.length} {orders.length>1?"orders":"order"} running.</h3>
       <Table striped bordered hover>
         <thead>
           <tr>

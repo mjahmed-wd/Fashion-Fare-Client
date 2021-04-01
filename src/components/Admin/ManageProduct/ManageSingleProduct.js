@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import EditOutlinedIcon from "@material-ui/icons/EditOutlined";
 import DeleteForeverOutlinedIcon from "@material-ui/icons/DeleteForeverOutlined";
 
-const ManageSingleProduct = ({ product }) => {
+const ManageSingleProduct = ({ product,index }) => {
   const{_id,name,variant,price}=product
   console.log(product);
   const [hidden, makeHidden] = useState(false);
@@ -20,7 +20,7 @@ const ManageSingleProduct = ({ product }) => {
     <tr>
       {hidden === false && (
         <>
-          <td>1</td>
+          <td>{index+1}</td>
           <td>{name}</td>
           <td>{variant}</td>
           <td>{price}</td>

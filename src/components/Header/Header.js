@@ -26,7 +26,7 @@ const Header = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ml-auto">
-              <Nav.Link onClick={() => history.push("/home")}>Home</Nav.Link>
+              <Nav.Link onClick={() => history.push("/")}>Home</Nav.Link>
               <Nav.Link onClick={() => history.push("/orders")}>
                 Orders
               </Nav.Link>

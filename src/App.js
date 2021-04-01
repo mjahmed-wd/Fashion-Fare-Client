@@ -27,9 +27,9 @@ function App() {
                 <Search />
                 <Home />
               </Route>
-              <Route exact path="/checkout">
+              <PrivateRoute exact path="/checkout">
                 <CheckOut />
-              </Route>
+              </PrivateRoute>
               <PrivateRoute exact path="/admin">
                 <AdminPanel />
               </PrivateRoute>

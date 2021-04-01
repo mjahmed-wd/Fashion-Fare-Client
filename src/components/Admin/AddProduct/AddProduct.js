@@ -20,7 +20,9 @@ const AddProduct = () => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(eventData),
-    }).then((res) => console.log(res));
+    }).then((res) => {
+      alert("Data Added Successfully")
+      console.log(res)});
   };
 
   const handleImageUpload = (event) => {

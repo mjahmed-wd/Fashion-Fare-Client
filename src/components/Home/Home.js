@@ -16,7 +16,9 @@ const Home = () => {
   return (
     <div>
       {loading ? (
-        <CircularProgress />
+        <div className="text-center">
+          <CircularProgress />
+        </div>
       ) : (
         <div className="card-group row row-cols-1 row-cols-md-4 g-4 padding-right">
           {products.map((product) => (
