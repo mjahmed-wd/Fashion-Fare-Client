@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import "./AddProduct.css"
+import PublishIcon from '@material-ui/icons/Publish';
 
 const AddProduct = () => {
   const { register, handleSubmit } = useForm();
@@ -35,36 +37,60 @@ const AddProduct = () => {
         console.log(error);
       });
   };
-  //   console.log(watch("example"));
   return (
-    <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input
-          name="name"
-          defaultValue="Product Name"
-          ref={register({ required: true })}
-        />
-        <br />
-        <input
-          name="price"
-          defaultValue="50"
-          ref={register({ required: true })}
-        />
-        <br />
-        <select name="variant" ref={register({ required: true })}>
-          <option value="female">Female</option>
-          <option value="male">Male</option>
-          <option value="other">Kids</option>
-        </select>
-        <br />
-        <input
-          name="exampleRequired"
-          type="file"
-          onChange={handleImageUpload}
-          ref={register({ required: true })}
-        />
-        <br />
-        <input type="submit" />
+    <div className="p-4">
+      <form onSubmit={handleSubmit(onSubmit)} className="row">
+        <div className="col-md-6 mb-2">
+          <h6>Product Name</h6>
+          <input
+            name="name"
+            className="w-75"
+            placeholder="Product Name"
+            ref={register({ required: true })}
+          />
+        </div>
+        <div className="col-md-6">
+          <h6>Product Price</h6>
+          <input
+            name="price"
+            className="w-75"
+            placeholder="Product Price"
+            ref={register({ required: true })}
+          />
+        </div>
+        <div className="col-md-6">
+          <h6>Select Variant</h6>
+          <select
+            name="variant"
+            className="w-75"
+            ref={register({ required: true })}
+          >
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+            <option value="Kids">Kids</option>
+          </select>
+        </div>
+        <div className="col-md-6 button-wrap">
+          <h6>Upload Photo</h6>
+          <label className="new-button" htmlFor="exampleRequired">
+           <PublishIcon/> Upload Photo
+          </label>
+
+          <input
+            className="w-75"
+            placeholder="Select Variant"
+            name="exampleRequired"
+            id="exampleRequired"
+            type="file"
+            onChange={handleImageUpload}
+            ref={register({ required: true })}
+          />
+          <div className="w-75">
+          <input type="submit" />
+        </div>
+        </div>
+
+        
       </form>
     </div>
   );

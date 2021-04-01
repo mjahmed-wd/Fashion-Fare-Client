@@ -1,8 +1,9 @@
 
   .googleLogin {
-    border: 1px solid green;
+    border: 1px solid #007BFF;
     border-radius: 15px;
     padding: 5px 0;
+    cursor: pointer;
     margin: auto 25%;
   }
   .googleLogin img {

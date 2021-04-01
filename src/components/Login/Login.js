@@ -1,22 +1,18 @@
 import "./Login.css";
-import { useForm } from "react-hook-form";
 import firebase from "firebase/app";
 import "firebase/auth";
-// import firebaseConfig from "./firebase.config.js";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { UserContext } from "../../App";
 import { useHistory, useLocation } from "react-router";
-import { firebaseInitialization } from "./SignOut";
+import { firebaseInitialization } from "./FirebaseRefectored";
 
 function Login() {
   let history = useHistory();
   let location = useLocation();
   let { from } = location.state || { from: { pathname: "/" } };
   const [user, setUser] = useContext(UserContext);
-  
+
   firebaseInitialization();
-
-
 
   const googleLogin = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
@@ -43,14 +39,12 @@ function Login() {
   };
   return (
     <div className="App">
-        <h3 className="p-2">Login</h3>
-        
+      <h3 className="p-2">Login</h3>
+
       {/* google login */}
 
-      <p>Or</p>
-      <div className="d-flex justify-content-center googleLogin">
-        
-        <button onClick={() => googleLogin()}>Continue with Google</button>
+      <div className="d-flex justify-content-center googleLogin" onClick={() => googleLogin()}>
+        Continue with Google
       </div>
     </div>
   );
