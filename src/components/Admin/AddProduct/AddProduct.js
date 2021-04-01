@@ -14,7 +14,7 @@ const AddProduct = () => {
       variant: data.variant,
       imageURL: imageURL,
     };
-    const url = `http://localhost:5000/addProduct`;
+    const url = `https://fashion-fare.herokuapp.com/addProduct`;
     console.log(eventData);
     fetch(url, {
       method: "POST",

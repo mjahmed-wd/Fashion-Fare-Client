@@ -7,7 +7,7 @@ const ManageSingleProduct = ({ product }) => {
   console.log(product);
   const [hidden, makeHidden] = useState(false);
   const handleDelete = () => {
-    fetch(`http://localhost:5000/delete/${_id}`, {
+    fetch(`https://fashion-fare.herokuapp.com/delete/${_id}`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
     })
