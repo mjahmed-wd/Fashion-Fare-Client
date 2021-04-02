@@ -6,12 +6,12 @@ import IndividualOrderItem from "./IndividualOrderItem";
 const Order = () => {
   const [user] = useContext(UserContext);
   const [orders, setOrders] = useState([]);
-  console.log(user);
+  // console.log(user);
   useEffect(() => {
     fetch(`https://fashion-fare.herokuapp.com/orders/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setOrders(data);
       });
   }, [user.email]);

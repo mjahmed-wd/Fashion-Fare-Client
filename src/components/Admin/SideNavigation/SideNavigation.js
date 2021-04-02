@@ -10,11 +10,11 @@ const SideNavigation = () => {
       style={{ height: "100vh" }}
     >
       <Link to="/admin" className={url === "admin" ? "active" : ""}>
-        Admin
+        Add Product
       </Link>
       <br />
       <Link to="/manage" className={url === "manage" ? "active" : ""}>
-        Manage
+        Manage Products
       </Link>
     </div>
   );

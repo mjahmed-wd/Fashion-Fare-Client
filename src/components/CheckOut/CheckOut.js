@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
+import { useHistory } from "react-router";
 import { UserContext } from "../../App";
 
 const CheckOut = () => {
   const [user] = useContext(UserContext);
   const [product, setProduct] = useState({});
   const id = sessionStorage.getItem("product");
+  let history = useHistory();
   useEffect(() => {
     fetch(`https://fashion-fare.herokuapp.com/product/${id}`)
       .then((res) => res.json())
@@ -29,6 +31,7 @@ const CheckOut = () => {
       .then((data) => {
         // console.log(data);
         alert("Order Placed Successfully")
+        history.push("/orders")
       });
   };
   return (
@@ -46,11 +49,11 @@ const CheckOut = () => {
             <tr>
               <td>{product.name}</td>
               <td>1</td>
-              <td>{product.price}</td>
+              <td>$ {product.price}</td>
             </tr>
             <tr>
               <td colSpan="2">Total Amount</td>
-              <td>{product.price}</td>
+              <td>$ {product.price}</td>
             </tr>
             <tr>
               <td colSpan="2"></td>

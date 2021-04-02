@@ -54,7 +54,7 @@ const Header = () => {
                   <NavDropdown.Item>
                     <button
                       onClick={() => handleLogOut()}
-                      className="btn btn-primary"
+                      className="btn btn-warning"
                     >
                       Log Out
                     </button>
