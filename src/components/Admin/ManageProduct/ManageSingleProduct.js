@@ -4,14 +4,13 @@ import DeleteForeverOutlinedIcon from "@material-ui/icons/DeleteForeverOutlined"
 import { Button, Modal } from "react-bootstrap";
 import UpdateSingleProduct from "./UpdateSingleProduct";
 
-const ManageSingleProduct = ({ product, index }) => {
+const ManageSingleProduct = ({ product}) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const { _id, name, variant, price } = product;
-  // console.log(product);
   const [hidden, makeHidden] = useState(false);
   const handleDelete = () => {
     fetch(`https://fashion-fare.herokuapp.com/delete/${_id}`, {
@@ -40,7 +39,7 @@ const ManageSingleProduct = ({ product, index }) => {
       </Modal>
       {hidden === false && (
         <>
-          <td>{index + 1}</td>
+          <td>*</td>
           <td>{name}</td>
           <td>{variant}</td>
           <td>$ {price}</td>

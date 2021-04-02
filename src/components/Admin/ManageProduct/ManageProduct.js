@@ -51,7 +51,6 @@ const ManageProduct = () => {
                     {products.map((product) => (
                       <ManageSingleProduct
                         key={product._id}
-                        index={products.indexOf(product)}
                         product={product}
                       />
                     ))}

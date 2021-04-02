@@ -20,7 +20,7 @@ const Home = () => {
           <CircularProgress />
         </div>
       ) : (
-        <div className="card-group row row-cols-1 row-cols-md-4 g-4 padding-right">
+        <div className="card-group row row-cols-1 row-cols-md-4 padding-right">
           {products.map((product) => (
             <IndividualProduct key={product.name} product={product} />
           ))}

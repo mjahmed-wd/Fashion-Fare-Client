@@ -7,7 +7,6 @@ const UpdateSingleProduct = ({ product,handleClose }) => {
   const { _id, name, price, variant } = product;
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    // console.log(data);
     const eventData = {
       name: data.name,
       price: data.price,
@@ -20,7 +19,6 @@ const UpdateSingleProduct = ({ product,handleClose }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data)
         handleClose();
         setProductChangeStatus(!productChangeStatus)
       });

@@ -8,7 +8,7 @@ const IndividualProduct = ({ product }) => {
     sessionStorage.setItem("product", product._id);
   };
   return (
-    <div className="col">
+    <div className="col mb-3">
       <div className="card h-100 bg-light p-2">
         <img
           src={product.imageURL}

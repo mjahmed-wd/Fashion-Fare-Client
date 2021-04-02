@@ -15,19 +15,16 @@ const AddProduct = () => {
       imageURL: imageURL,
     };
     const url = `https://fashion-fare.herokuapp.com/addProduct`;
-    // console.log(eventData);
     fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(eventData),
     }).then((res) => {
       alert("Data Added Successfully")
-      // console.log(res)
     });
   };
 
   const handleImageUpload = (event) => {
-    // console.log(event.target.files[0]);
     const imageData = new FormData();
     imageData.set("key", "8bc92ea2aef5c437abee8233cb8457b2");
     imageData.append("image", event.target.files[0]);

@@ -7,7 +7,6 @@ const SideNavigation = () => {
   return (
     <div
       className="bg-primary text-center side_navigation"
-      style={{ height: "100vh" }}
     >
       <Link to="/admin" className={url === "admin" ? "active" : ""}>
         Add Product

@@ -25,6 +25,7 @@ function Login() {
         const newUserInfo = { ...user };
         newUserInfo.name = googleUser.displayName;
         newUserInfo.email = googleUser.email;
+        newUserInfo.profilePicture=googleUser.photoURL;
         newUserInfo.isSignedIn = true;
         setUser(newUserInfo);
         history.replace(from);

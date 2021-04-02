@@ -12,6 +12,7 @@ import Order from "./components/Order/Order";
 import Login from "./components/Login/Login";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import { Container } from "react-bootstrap";
+import Footer from "./components/Footer/Footer";
 
 export const UserContext = createContext();
 function App() {
@@ -47,6 +48,7 @@ function App() {
               </Route>
             </Switch>
           </Container>
+          <Footer/>
         </div>
       </UserContext.Provider>
     </Router>

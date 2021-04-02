@@ -52,6 +52,15 @@ const Header = () => {
               {user.isSignedIn === true && (
                 <NavDropdown title={user.name} id="basic-nav-dropdown">
                   <NavDropdown.Item>
+                    <img src={user.profilePicture} className="img-fluid img-thumbnail" alt=""/>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item className="w-100">
+                    
+                      <h6 onClick={()=>history.push('/orders')}>
+                      My Activity
+                      </h6>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item>
                     <button
                       onClick={() => handleLogOut()}
                       className="btn btn-warning"
